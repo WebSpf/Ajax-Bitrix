@@ -38,6 +38,11 @@ function DEMOLoad(){
       DEMOResponse
    );
 }
+
+/* Обработываем ответ AJAX
+выводим данные в консоль для отладки
+показываем полученный результат
+*/
 function DEMOResponse (data){
    BX.debug('AJAX-DEMOResponse ', data);
    BX("block").innerHTML = data.RESULT;
@@ -58,7 +63,8 @@ BX.ready(function(){
    */
    BX.hide(BX("block"));
    BX.hide(BX("process"));
-   
+
+   //Привязываем обработчик события клик
     BX.bindDelegate(
       document.body, 'click', {className: 'css_ajax' },
       function(e){
@@ -73,6 +79,7 @@ BX.ready(function(){
 });
 
 </script>
+<!-- Выводим HTML-->
 <div class="css_ajax">click Me</div>
 <?
 //подключаем эпилог ядра bitrix
